@@ -128,6 +128,8 @@
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
     <None Include="Properties\PublishProfiles\Joel.pubxml" />
+    <None Include="Properties\PublishProfiles\sight - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\sight - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
