@@ -18,39 +18,37 @@ namespace SIGHT1.mail
                 var body = "Hi, your friend " + messageModel.name + ", " + "\nWhose email is: " + " " + messageModel.email
                                 + " " + "\nhas sent you the following message:" + "   " + messageModel.message;
 
-                string toDisplayName = "Joel--Msg";
+                string toDisplayName = "Sight Message";
                 var fromAddress = new MailAddress(messageModel.email, toDisplayName);
                 MailAddress toAddress = null;
                 string subject = "QUERY";
-                string emailString = "jkapuku@sbit.co.za";
+                string emailString = "cmogodi@gmail.com";
                 toAddress = new MailAddress(emailString, toDisplayName);
 
                 if (toAddress == null) throw new Exception("Delivery Address is empty.");
+                var credential = new NetworkCredential
+                {
+                    UserName = "cmogodi@gmail.com",  // replace with valid value
+                    Password = "mcmogodi"  // replace with valid value
+                };
 
                 var smtp = new SmtpClient
                 {
-                    //Host = "smtp.gmail.com",
-                    Host = "smtp.office365.com",
-                    Port = 25,
+
+                    Credentials = credential,
+                    Host = "smtp.gmail.com",
+                    Port = 587,
                     EnableSsl = true,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    //TargetName = "STARTTLS/smtp.office365.com",
-                UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(toAddress.Address, "Kaspersky1")
+
                 };
 
-
-                using (var message = new MailMessage(toAddress.Address, toAddress.Address)
+                var message = new MailMessage(toAddress.Address, toAddress.Address)
                 {
                     Subject = subject,
                     Body = body,
-                })
+                };
 
-                {
-                    smtp.Send(message);
-                }
-
-
+                smtp.Send(message);
             }
             catch (Exception ex)
             {

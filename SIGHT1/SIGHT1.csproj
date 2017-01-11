@@ -87,6 +87,8 @@
     <Content Include="content\toastr.min.css" />
     <Content Include="Global.asax" />
     <Content Include="img\main_bg-min.jpg" />
+    <Content Include="img\portfolio\elearning.JPG" />
+    <Content Include="img\portfolio\MIProductManagement.JPG" />
     <Content Include="img\Untitled-2.png" />
     <Content Include="packages.config" />
     <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.eot" />
